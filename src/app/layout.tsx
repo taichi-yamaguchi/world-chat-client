@@ -16,7 +16,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="flex justify-center items-center text-white  font-bold  bg-blue-400 h-16">
+          <div className="flex-1"></div>
+          <div className="flex-1 text-center text-3xl">
+            <span>WORLD CHAT</span>
+          </div>
+          <div className="flex-1 text-right">
+            <button>HOME</button>
+            <button>自己紹介</button>
+            <button>ログイン</button>
+            <button>チャット</button>
+          </div>
+        </div>
+        {children}
+      </body>
     </html>
   )
 }
