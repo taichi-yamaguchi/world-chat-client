@@ -8,6 +8,15 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+@layer components {
+  .menu-item {
+    @apply px-6 py-2 ml-14 hover:text-neutral-950 hover:bg-white hover:shadow-white transition-all duration-500 ease-out rounded-lg;
+  }
+
+  .menu-item-text {
+    @apply tracking-widest;
+  }
+}
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -18,4 +27,8 @@
 
 body {
   color: rgb(var(--foreground-rgb));
+  margin: 0;
+  overflow: hidden;
 }
+
+.
