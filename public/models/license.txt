@@ -1,0 +1,11 @@
+Model Information:
+* title:	Earth in Blender 2D
+* source:	https://sketchfab.com/3d-models/earth-in-blender-2d-2533e1e513b34e5cb2af1dd7a2442dc6
+* author:	yelaman.arts (https://sketchfab.com/elamanbolushan)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Earth in Blender 2D" (https://sketchfab.com/3d-models/earth-in-blender-2d-2533e1e513b34e5cb2af1dd7a2442dc6) by yelaman.arts (https://sketchfab.com/elamanbolushan) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
