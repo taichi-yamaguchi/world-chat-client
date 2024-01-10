@@ -1,29 +1,23 @@
-// prettier-ignore
 'use client'
+
+import Link from 'next/link'
 import { Inter } from 'next/font/google'
 import {
   Menu,
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
   MenuDivider,
-  Icon,
   Hide,
+  Show,
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import './globals.css'
-import { Providers } from './providers'
+import Providers from './providers'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <head>
@@ -31,12 +25,15 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <Providers>
-          <div className="flex items-center w-full text-white font-bold bg-gray-900 h-20">
+          <div
+            className="flex items-center w-full text-white font-bold bg-gray-900"
+            style={{ height: '10%' }}
+          >
             <div className="mx-7 w-full flex justify-between">
               <div className="text-3xl flex items-center">
                 <span>WORLD CHAT</span>
               </div>
-              <div className="lg:hidden">
+              <Show below="lg">
                 <Menu>
                   <MenuButton
                     px={4}
@@ -48,36 +45,51 @@ export default function RootLayout({
                     _expanded={{ bg: 'blue.400' }}
                     _focus={{ boxShadow: 'outline' }}
                   >
-                    File <HamburgerIcon />
+                    File
+                    <HamburgerIcon />
                   </MenuButton>
                   <MenuList>
-                    <MenuItem>New File</MenuItem>
-                    <MenuItem>New Window</MenuItem>
+                    <MenuItem color="black">HOME</MenuItem>
+                    <MenuItem color="black">自己紹介</MenuItem>
+                    <MenuItem color="black">
+                      <Link href="/chat">チャット</Link>
+                    </MenuItem>
+                    <MenuItem color="black">ログイン</MenuItem>
                     <MenuDivider />
                   </MenuList>
                 </Menu>
-              </div>
+              </Show>
               <Hide below="lg">
                 <div className="flex justify-center">
                   <div className="menu-item">
-                    <button className="menu-item-text">HOME</button>
+                    <Link href="/" className="menu-item-text">
+                      HOME
+                    </Link>
                   </div>
                   <div className="menu-item">
-                    <button className="menu-item-text">自己紹介</button>
+                    <Link href="/chat" className="menu-item-text">
+                      自己紹介
+                    </Link>
                   </div>
                   <div className="menu-item">
-                    <button className="menu-item-text">ログイン</button>
+                    <Link href="/chat" className="menu-item-text">
+                      チャット
+                    </Link>
                   </div>
                   <div className="menu-item">
-                    <button className="menu-item-text">チャット</button>
+                    <Link href="/logout" className="menu-item-text">
+                      ログアウト
+                    </Link>
                   </div>
                 </div>
               </Hide>
             </div>
           </div>
-          {children}
+          <div style={{ height: '90%' }}>{children}</div>
         </Providers>
       </body>
     </html>
   )
 }
+
+export default RootLayout
